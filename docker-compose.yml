@@ -1,0 +1,20 @@
+php:
+  image: php:8.1-apache
+  container_name: php
+  ports: 
+    - "80:80"
+    - "443:443"
+  volumes:
+    - /home/ubuntu/projetos/php:/var/www/html
+  links:
+    - db
+
+db:
+  image: mysql:lastest
+  container_name: mysql
+  ports:
+    - "3306:3306"
+  volumes:
+    - /var/lib/mysql
+  enviroment:
+    - MYSQL_ROOT_PASSWORD=root
