@@ -16,5 +16,5 @@ db:
     - "3306:3306"
   volumes:
     - /var/lib/mysql
-  enviroment:
+  environment:
     - MYSQL_ROOT_PASSWORD=root
